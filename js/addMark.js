@@ -128,7 +128,7 @@ $(document).ready(function(){
 	}));
 
 
-	$(".buttonsMark2").on("click",(function (e){
+	$(".buttonsMark2").on("click" , "option",(function (e){
 	    var newMark = $("#mark10").find("option:selected").val();
 		if(typeMark==0){
 			var StudentId = LastDiv.parent().attr('st-id');
@@ -158,6 +158,7 @@ $(document).ready(function(){
 						$("#mark10").val($("#mark10 option:first").val());
 						console.log(newMark);
 						setMarkHere.html(newMark);
+						setMarkHere.attr('data-mark-id',newMarkId);
 						parentBlock.addClass("thisNewMark");
 						setMarkHere = "";
 						markBoard2Close();

@@ -296,9 +296,7 @@ if ($_POST['action']=='set_lateness'){
 		DB::$dbs->query("DELETE FROM `journal_lateness_marks` WHERE `pair_id` = '".$_POST["pair_id"]."' AND `student_id` = '".$_POST["student_id"]."' AND `id` = '".$_POST["mark_id"]."'");
 
 	  	if(isset($only_del)){// выставляем отметку/отметки
-	  		foreach ($values as $mark) {
-	  			DB::$dbs->query("INSERT INTO `journal_lateness_marks` SET `pair_id` = '".$_POST["pair_id"]."', `student_id` = '".$_POST["student_id"]."', `owner_id` = '".$admin['id']."', `value` = '".$mark."', `stamp` = '".$stamp."', `prooved` = '".$prooved."', `type_id` = '".$mark_type_id."'");
-		  	}
+	  		DB::$dbs->query("INSERT INTO `journal_lateness_marks` SET `pair_id` = '".$_POST["pair_id"]."', `student_id` = '".$_POST["student_id"]."', `owner_id` = '".$admin['id']."', `value` = '".$values[0]."', `stamp` = '".$stamp."', `prooved` = '".$prooved."', `type_id` = '".$mark_type_id."'");
 		  	echo DB::$dbs->lastInsertId();
 		} else {
 			echo "0";
