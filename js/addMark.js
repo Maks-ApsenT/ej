@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 	//выпадлака плшки
 	$(".mark td div.thisMark").on("click", "span",(function (e) {
+		console.log("qqqq");
 		var offsetBlock = $(this).offset();
 		typeMark=0
 		e.stopPropagation();
@@ -80,6 +81,11 @@ $(document).ready(function(){
 		$('.markBoard').css({"top":"-300px"});
 	})
 
+	function markBoard2Close()
+	{
+		$('.markBoard2').css({"top":"-300px"});
+	}
+
 	//сброс оценок в начальное состояние
 	function resetChekendMark(){
 		//$("#setMH").removeAttr("id");//удаляем айди куда ставить оценку
@@ -112,6 +118,7 @@ $(document).ready(function(){
 			},function(data){
 				var newMarkId = parseInt(data);
 				if (data!='error') {
+					setMarkHere.html('&nbsp;');
 				}else{
 					alert("Что-то пошло не так. Оценка не добавлена");
 				}
@@ -134,6 +141,8 @@ $(document).ready(function(){
 
 		$.blockUI();
 
+		setMarkHere.removeClass("thisNewMark thisOblom");
+
 		if(typeMark == 0){
 			$.post('ajax.php',{
 					action:'set_lateness',
@@ -143,13 +152,20 @@ $(document).ready(function(){
 					value:newMark
 			},function(data){
 				var newMarkId = parseInt(data);
+				parentBlock = setMarkHere.parent();
 				if (data!='error') {
-					$("#mark10").val($("#mark10 option:first").val());
+					if (data != '00') {
+						$("#mark10").val($("#mark10 option:first").val());
+						console.log(newMark);
+						setMarkHere.html(newMark);
+						parentBlock.addClass("thisNewMark");
+						setMarkHere = "";
+						markBoard2Close();
+					}
 				}else{
 					alert("Что-то пошло не так. Оценка не добавлена");
 				}
 				$.unblockUI();
-				setMarkHere = "";
 			})
 		}
 	}));

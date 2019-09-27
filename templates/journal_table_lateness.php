@@ -76,7 +76,7 @@
 						<? endforeach; ?>
 					</tr>
 					<? foreach($students as $kkey => $student): ?>
-					<tr class="labs mark row<?=$student['id']?>">
+					<tr class="mark lateness row<?=$student['id']?>">
 						<? foreach($dates as $numberYear => $year): ?>
 							<? foreach($year as $numberMonth => $month): ?>
 								<? foreach($month as $day): ?>
