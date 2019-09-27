@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    font: normal 13px arial,sans-serif;
+}
+body{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wFDgwaDDGWwSMAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAOklEQVRIx+3NIQFAIRDA0IGnzclfh1TUQV4bCmCuAurvmcm1zBzAB+yIODzQa7CqvJpsYFYlSZJ+6ALz/wgGAIwlfwAAAABJRU5ErkJggg==) repeat;
+    min-width: 1024px;
+}
+/*Verhniy block*/
+.up{
+    width: 100%;
+    border-bottom: #EEE dashed 1px;
+    height: 27px;
+}
+.inf{
+    float: right;
+    font-size: 15px;
+    padding-top: 3px;
+    padding-right: 20px;
+}
+.login{
+    z-index: 10;
+    position: relative;
+}
+
+.login a, .fio{
+    padding: 1px 5px;
+}
+
+.fio{
+    background-color: #FFF;
+    padding-left: 0;
+}
+
+.login a{
+    text-decoration: none;
+    color: #CCC;
+    border-radius: 2px;
+    background-color: #FFF;
+}
+.login a:hover{
+    background-color: #AAA;
+    color: #FFF;
+}
+/*Verhniy block end*/
+/*Центральный блок*/
+.middle{
+    width: 100%;
+}
+.groupName{
+    text-transform: uppercase;
+    background-color: #FFF;
+    padding: 1px 0 1px 5px;
+}
+/*Центральный блок конец*/
+
+.alert {
+    color: red!important;
+}

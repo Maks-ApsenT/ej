@@ -1,0 +1,482 @@
+/*Общее описание таблиц*/
+.leftTable td{
+    border-left: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    color: #444;
+}
+.leftTable{
+    border-right: 1px solid #CCC;
+    border-top: 3px solid #CCC;
+}
+.rightTable td{
+    border-left: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    color: #444;
+}
+.rightTable tr td:first-child{
+    border-left: 0 none;
+}
+.rightTable{
+    border-top: 3px solid #CCC;
+    overflow: auto;
+}
+.leftColumn{
+    margin: 0 0 20px 20px;
+    float: left;
+}
+.rightColumn{
+    margin: 25px 20px 20px 0;
+    overflow: auto;
+}
+.heightRow27 tr td div{
+    height: 26px;
+    line-height: 26px;
+    color: #444;
+}
+.heightRow23 tr td div{
+    height: 23px;
+    line-height: 23px;
+    color: #444;
+}
+/*Общее описание таблиц конец*/
+.pupilName{/*Имена учеников*/
+    font-size: 15px;
+    width: 161px;
+    margin-left: 4px;
+    overflow: hidden;
+    text-overflow: clip;
+    cursor: help;
+}
+.nlbRb2{
+    border-right: 2px solid #CCC;
+    border-left: 0 none !important;
+}
+td.b2b{/*Двояная граница*/
+    border-bottom: 3px solid #CCC;
+}
+.tableMonth{/*надпись "Месяц"*/
+    text-align: right;
+    padding-right: 4px;
+    font-size: 14px;
+}
+.tableMonth, #dateOfMonth, .nameMonth, .nameMonthOneChar, .nameMonthTwoChar, .charNumber, .dateChant, .nameio
+{
+    color: #999 !important;
+}
+#dateOfMonth td{/*день месяца*/
+    border-bottom: 3px solid #CCC;
+}
+#dateOfMonth td div{/*день месяца*/
+    color: #999 !important;
+}
+.nameMonth, .nameMonthOneChar, .nameMonthTwoChar{/*название месяца месяца*/
+    font-size: 14px;
+    text-align: center;
+    color: #999 !important;
+    cursor: help;
+}
+.nameMonthOneChar{/*если одна оценка 20+4маргина+1бордер*/
+    width: 18px;
+}
+.nameMonthTwoChar{
+    width: 41px;
+}
+.nameMonthOneChar, .nameMonthTwoChar{
+    overflow: hidden;
+    margin: 0 2px 0 2px;
+}
+.pupilNumber, .charNumber, .mark td div, .labs td div, #dateOfMonth td div{/*ширина колонки номер ученика, число и оценка одинаквы*/
+    width: 22px;
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+}
+.groupsAndSubjectsWrap{
+    padding: 5px 30px;
+    margin: 0 20px;
+    position: relative;
+    border-bottom: #EEE dashed 1px;
+    text-align: left;
+    height: 39px;
+    overflow: hidden;
+    background-color: #FFF;
+    z-index: 2;
+}
+.groupsWrapTwo, .subjectsWrapTwo{
+    width: 100%;
+    height: 39px;
+    overflow: hidden;
+    position: relative;
+
+}
+.cScroll{
+    position: absolute;
+    background-color: #FFF;
+    border: 0 none;
+    background-repeat: no-repeat;
+}
+#leftScroll, #rightScroll{
+    top: 10px;
+    z-index: 3;
+    height: 27px;
+    width: 20px;
+}
+#topScroll, #bottomScroll{
+    z-index: 1;
+    height: 20px;
+    width: 100%;
+    background-position: 50% 50%;
+
+}
+#leftScroll{
+    left: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMtJREFUeNqslUsOwCAIRIX0Rt7/Bnommi5Mi+EzmLKyiXlFZhxJRBpac861lN47WXsIBX5ha2FBIaAF86ApMIJZ0BCIwHYoA+MTcMaCdIhbwDvydkxCO1w8BXRmhkJJdZgIkEG1yqCaFPzs/RhjVNQkYxyquGKNj1Am7KmrqGIYDKtDqlot8idH7Ucz9KAcDThT2YLutjnyoZk2AZQqaeNdvaO7/EB/TxtGLnzFUoymCLqPK5vhtAEfqQalTfEZbVnanDz0e+qougUYAATFki4XeI6MAAAAAElFTkSuQmCC');
+
+);
+}
+#rightScroll{
+    right: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAM1JREFUeNqclVEOxCAIBYUref8b6JnYkmxNS1Hfk68mNVNAmIqZlSx67/5C/LnWWtCQDPiHjTMM9AMMMBr6Ak5gFHQANzAYqgTMY3tOCRgEldYa9OVQ9nSk9NkbAjaSuCpMgQhUkko+UM1uEYSl0LuHq8YL2GPJMoyZCnFhNt1lcHNwOQTbUCOF2gbuIWObrThObGMrmG/NiW1sBhsZkrf52uW4zz7Y9GhcAFn5UNhRW/rwwDYFAaK2KQxwZ5uC/KQUyASGobaBYR4/AQYAclF+0z9D8GgAAAAASUVORK5CYII=');
+
+}
+#topScroll{
+    top: -21px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAUCAYAAAB8gkaAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKxJREFUeNq01dENgzAMhGF8K2X/ETKTwUigAEnsM8BTkfj1Cbi2oqoLe9RaLZJSCtUhCdmh2+f/sAZaMiBeQDSIlxAF4gMoDOIj6ART2DFvRtq+CmLd6A7hzTsKHtDskSIybw+8QcN3iOi8R+AA6oJg5n0HHegBiv02kqszUIPQpUNm3glo78DOu7me7kCG4pxPOzT/ScJAmQ7BUDoI3SEQdqFMByecQmy3CjAAuC2DwZxnw0wAAAAASUVORK5CYII=');
+    display: none;
+    cursor: pointer;
+}
+#bottomScroll{
+    bottom: -21px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAUCAYAAAB8gkaAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMlJREFUeNqklVEOhCAMRJ25Evc/AmdiJVmSLtp2yvKjhjxfLNOKMcZlV+993c4NrIfW2hUthWMA2Kvdy0QuxwC4FGGFwyxjANj1KE2Vowg89k84ikBaKoVjAXBDoHK8648ihLuE44Tj98BVEOuLikLMUNEkDKrIhEQRYqX3p6kDEN4ZJUK4E8QRIguDI8Q+4vgGGxBq6jYh3mYp9kG8v6CYuPDseQpmo6ksq7ZF9hviv6VRRbIsawtFVJJ5baGKyrK9LSqiuT4CDAA/U3K1htfP6QAAAABJRU5ErkJggg==');
+    display: none;
+    cursor: pointer;
+}
+.preMiddle{
+    position: relative;
+}
+.groups, .subjects{
+    width: 1000%;
+    position: absolute;
+    left: 0;
+}
+.subjects{
+    margin-left: 75px;
+}
+.group, .subject{
+    display: inline-block;
+    height: 18px;
+    padding: 3px 7px;
+    margin: 5px 3px;
+    text-transform: uppercase;
+    background-color: #AAA;
+    box-shadow: inset 0px 0px 0px 1px #FFF;
+    border: 2px solid #AAA;
+    list-style: none;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 17px;
+    width: auto;
+}
+.subjects li{ text-transform: none;}
+
+.activeG, .activeS{
+    border: 2px solid #AAA !important;
+    background-color: #FFF !important;
+    color: #AAA !important;
+}
+.group:hover, .sunject:hover{
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+}
+.group:active, .subject:active{
+    box-shadow: inset 0px 0px 3px 1px #FFF;
+}
+/*Косая наклонная черта блок*/
+.o{
+    width: 170px;
+    position: relative;
+}
+.b{position: absolute;
+   top: 0;
+   right: 0;
+   z-index: 0;
+   border-color: transparent #CCC transparent transparent;
+   border-style: solid;
+   border-width: 0px 115px 27px 0;
+   width:0;
+   height:0 !important;
+}
+.b2{position: absolute;
+    z-index: 1;
+    right: 0;
+    top: -1px;
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+    border-width: 0px 115px 27px 0;
+    width:0;
+    height:0 !important;
+}
+.u{ width: 170px;
+    border-top: 1px #CCC solid;
+    position: absolute;
+    z-index: 2;
+    top: -1px;
+    right: -1px;
+}
+.dateChant{
+    position: absolute;
+    font-size: 12px;
+    line-height: 12px !important;
+    right: 4px;
+    z-index: 2;
+    top: 2px;
+}
+.nameio{
+    position: absolute;
+    font-size: 11px;
+    line-height: 11px !important;
+    text-align: left;
+    left: 4px;
+    top: 2px;
+    overflow: hidden;
+    width: 120px;
+}
+/*Косая наклонная черта блок конец*/
+.hoverOn{
+    background-color: rgba(255,77,73,1);
+    background-color: rgba(0,177,255,0.1);
+    background-color: rgba(48,168,255,0.1);
+}
+table{
+    background-color: #FFF;
+}
+.markBoard {
+    position: absolute;
+    width: 138px;
+    height: 144px;
+    height: 170px;
+    /*margin-left: 25px;
+    margin-top: 27px;*/
+    top: -300px;
+    background: white;
+    border: solid 3px #CCC;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.4);
+    text-align: left;
+    z-index: 2;
+}
+.buttonsMark{
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    display: inline;
+    margin: 8px 0 0 13px;
+    background-color: #FFF;
+    font-weight: bold;
+    opacity: 0.8;}
+
+.buttonsMark:hover{opacity: 1;}
+
+#mark0{border: #F00 2px solid; color: #F00;}
+#mark1{border: #F30 2px solid; color: #F30;}
+#mark2{border: #C30 2px solid; color: #C30;}
+#mark3{border: #F60 2px solid; color: #F60;}
+#mark4{border: #F90 2px solid; color: #F90;}
+#mark5{border: #E5E500 2px solid; color: #E5E500;}
+#mark6{border: #CF0 2px solid; color: #CF0;}
+#mark7{border: #9F0 2px solid; color: #9F0;}
+#mark8{border: #6C0 2px solid;color: #6C0;}
+#mark9{border: #3C0 2px solid; color: #3C0;}
+#mark10{border: #090 2px solid; color: #090;}
+#mark11{border: #AAA 2px solid; color: #AAA;}
+
+corner{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: solid;
+}
+.crb{right: 0;
+    bottom: 0;
+    border-color: transparent #CCC #CCC transparent;}
+.clt{
+    bottom: -15px;
+    right: -15px;
+    border-color: #CCC transparent transparent #CCC;
+    opacity: 0.5;
+}
+#moreMark {
+    background: none;
+    border: #090 2px solid;
+    color: #090;
+    padding: 2px;
+    margin-left: 13px;
+    width: 111px;
+    opacity: 0.7;
+    margin-top: 8px;
+}
+#moreMark:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+#moreMark:disabled{
+    border: #CCC 2px solid;
+    color: #CCC;
+}
+.opaciyFrom4to8{
+    cursor: pointer;
+    opacity: 0.4;
+}.thisOblom{
+    outline: 1px solid #F30;
+}
+.thisNewMark{
+    outline: 1px solid #3C0;
+}
+
+.currentGroup{
+    height: 18px;
+    padding: 3px 7px;
+    margin: 5px 0;
+    text-transform: uppercase;
+    background-color: #FFF;
+    box-shadow: inset 0px 0px 0px 1px #FFF;
+    border: 2px solid #AAA;
+    list-style: none;
+    cursor: pointer;
+    color: #AAA;
+    font-size: 17px;
+    float: left;
+    z-index: 3;
+    position: relative;
+    box-shadow: 1px 0 4px 7px #FFF;
+}
+.loadingMark{
+    background-image: url('data:image/gif;base64,R0lGODlhDwAPAIABAMzMzP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQFFAABACwAAAAADwAPAAACFYyPqcvtD6OcC0SAH95t+/45HGQpBQAh+QQFFAABACwAAAQABwAHAAACDIxhCavLDgNEhyWZCgAh+QQFFAABACwEAAAABwAHAAACDIxhCavLDgNEhyWZCgAh+QQJFAABACwEAAQACwALAAACEowfgAu91iKLElH16ku7+w8aBQAh+QQJFAABACwAAAAADwAPAAACHYyPqcvtDmIMYFVJZ5pXVoR52KFlI7mV0MO2blsAACH5BAkUAAEALAAAAAAPAA8AAAIdjB+Ai+C8nIRGWpquonPy7EFWyIxY9ZyVyrZuWwAAIfkECRQAAQAsAAAAAA8ADwAAAhaMj6nL7Z8ADKC+ihvemrsMSdNIlkgBACH5BAUUAAEALAAAAAAPAA8AAAINjI+py+0Po5y02otnAQA7');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.options{
+    float: left;
+    margin-left: 20px;
+}
+#addDate{
+    float: left;
+    margin-left: 90px;
+    width: 28px;
+    height: 26px;
+    border: none 0;
+    background-image: url('data:image/gif;base64,R0lGODlhFAAUAIABAMzMzP///yH5BAEAAAEALAAAAAAUABQAAAI1jH8AyG2qnIRQMkrtqyFPjznY0oXISKKJWo4tqaGwlcmbe4P4qntXH/kEfUKT5hU85pQ/SwEAOw==');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    cursor: pointer;
+}
+
+#addDateForm{
+    display: none;
+    position: relative;
+}
+.close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: -20px;
+}
+div.WrapPairDisc div.pairDisc{
+    -moz-transform: rotate(270deg); /* Для Firefox */
+    -ms-transform: rotate(270deg); /* Для IE */
+    -webkit-transform: rotate(270deg); /* Для Safari, Chrome, iOS */
+    -o-transform: rotate(270deg); /* Для Opera */
+    transform: rotate(270deg);
+    height: 0px;
+    width: 0px;
+    white-space: nowrap;
+    line-height: 22px;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+}
+tr td div.WrapPairDisc{
+    width: 22px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: help;
+}
+
+.wrapAddDate{
+    display:none;
+    z-index: 3;
+    position: absolute;
+    border: 3px solid #CCC;
+    background-color: #FFF;
+    height: 270px !important;
+    padding: 10px;
+    box-shadow: -3px 3px 5px rgba(0,0,0,0.5);
+}
+.hideButton:hover,.hideButton{
+    opacity: 0;
+    cursor: auto;
+}
+.boardSemesterMark{
+    display: none; top: 5px; left: 25px; z-index:3; position: absolute; padding: 5px; background-color: #FFF; border: 2px solid #CCC; box-shadow: -2px 2px 5px rgba(0,0,0,0.4); width: 195px;
+}
+.danger{
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJBJREFUeNqklIEKwCAIRKf0R/vAdf+3f2psbODKUkuICOJx5l1U9s2q490xupQckCzOXRgHIFmoc4NqiAljE3IWepYBY6cSUxlPQFQYT0IaWFqASNhw/KHi12SrikAiIjMt5s/tXNm/BbU+aiDaGyHgo1/uqJP+UZtZC29vahhkDdH0Q0k/Zv8jeP6iuy4BBgAzYCntdwxkDwAAAABJRU5ErkJggg==');
+        background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-left: 5px;
+    width: 18px;
+    height: 18px;
+}
+
+#viewLabs {
+    border: 2px solid #AAA !important;
+    background-color: #FFF !important;
+    color: #AAA !important;
+    padding: 5px;
+    margin: 5px auto;
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+td,th {
+    border-left: 1px solid #000!important;
+    border-bottom: 1px solid #000!important;
+    border-collapse: collapse;
+}
+table {
+    border-top: 1px solid #000!important;
+    border-right: 1px solid #000!important;
+}
+.leftTable{
+    border-right: none!important;
+}
+* {
+    color: #000!important;
+    background: #FFF!important;
+}
+
+.up {
+    border: 0 none!important;
+    font-size: 18px;
+    text-indent: 1.5em;
+    height: auto!important;
+}
+
+.up > span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.heightRow27 tr td div {
+    height: 18px!important;
+    line-height: 18px!important;
+}

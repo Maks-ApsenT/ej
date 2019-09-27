@@ -1,0 +1,22 @@
+.middle {
+    width: 100%;
+}
+.leftColumn {
+    margin: 0 0 20px 20px;
+    float: left;
+    border-right: 2px solid #CCC;
+}
+.leftTable {
+    border-right: 1px solid #CCC;
+    border-top: 3px solid #CCC;
+}
+.leftTable td {
+    border-left: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    color: #444;
+}
+.heightRow27 tr td div {
+    height: 26px;
+    line-height: 26px;
+    color: #444;
+}

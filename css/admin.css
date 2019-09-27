@@ -1,0 +1,23 @@
+.middle{
+	width: 100%;
+}
+h1{
+	font-size: 20px;
+	font-style: italic;
+	color: #777;
+}
+.middle{
+	margin-top: 20px;
+}
+.con{
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.connection{
+	margin-top: 20px;
+}
+
+.techers, .connection, .addConnection{
+	margin: 20px 0 0 20px;
+}
