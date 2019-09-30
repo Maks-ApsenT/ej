@@ -1,6 +1,6 @@
 <?
 require_once('../classes/core.php');
-$allgroups =  DB::$dbs->query("SELECT `id`,`group_name` FROM `groups` ORDER BY `id`");
+$allgroups =  DB::$dbs->query("SELECT `id`,`group_name`,`state` FROM `groups` WHERE `state` = 1 ORDER BY `id`");
 ?>
 <link rel="stylesheet" href="css/login.css">
 <script src="chosen/chosen.jquery.js" type="text/javascript"></script>
