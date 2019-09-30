@@ -128,7 +128,7 @@ $(document).ready(function(){
 	}));
 
 
-	$(".buttonsMark2").on("click" , "option",(function (e){
+	$("#mark10").change(function(){
 	    var newMark = $("#mark10").find("option:selected").val();
 		if(typeMark==0){
 			var StudentId = LastDiv.parent().attr('st-id');
@@ -169,7 +169,7 @@ $(document).ready(function(){
 				$.unblockUI();
 			})
 		}
-	}));
+	});
 
 	//отправка оценки на сервер
 	$(".buttonsMark").on("click",(function (e){
