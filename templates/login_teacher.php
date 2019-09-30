@@ -47,5 +47,12 @@ function check_login(action) {
     return false;
 }
 
+$(document).ready(function(){
+    $('#form').keypress(function(e){
+      if(e.keyCode==13)
+        check_login();
+    });
+});
+
 $(".chzn-select").chosen({no_results_text: "Не найдено..."});
 </script>

@@ -54,7 +54,7 @@
             echo '<li><a href="teather_journal.php">'.$admin["login"].'</a></li>';
             echo '<li><a href="index.php?logout"><span class="glyphicon glyphicon-log-out"></span> Выйти</a></li>';
         }else{
-            if($_SERVER['PHP_SELF'] == '/t.php'){
+            if($_SERVER['PHP_SELF'] == '/ej/t.php'){
                 echo '<li><a href="index.php">Вход для родителей</a></li>';
             }else{
                 echo '<li><a href="t.php">Вход для преподавателeй</a></li>';
