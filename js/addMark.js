@@ -128,8 +128,8 @@ $(document).ready(function(){
 	}));
 
 
-	$("#mark10").change(function(){
-	    var newMark = $("#mark10").find("option:selected").val();
+	$("#mark_sel").change(function(){
+	    var newMark = $("#mark_sel").find("option:selected").val();
 		if(typeMark==0){
 			var StudentId = LastDiv.parent().attr('st-id');
 			var PairId = LastDiv.parent().attr('pair-id');
@@ -155,7 +155,7 @@ $(document).ready(function(){
 				parentBlock = setMarkHere.parent();
 				if (data!='error') {
 					if (data != '00') {
-						$("#mark10").val($("#mark10 option:first").val());
+						$("#mark_sel").val($("#mark_sel option:first").val());
 						console.log(newMark);
 						setMarkHere.html(newMark);
 						setMarkHere.attr('data-mark-id',newMarkId);

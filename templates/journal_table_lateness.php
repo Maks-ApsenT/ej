@@ -121,7 +121,7 @@
 			</div>
 
 		<markboard class="markBoard2" chekendmark="">
-			<select class="buttonsMark2" id="mark10">
+			<select class="buttonsMark2" id="mark_sel">
 				<option value="0">-------</option>
 				<option value="1">1 минута</option><option value="2">2 минуты</option><option value="3">3 минуты</option><option value="4">4 минуты</option><option value="5">5 минут</option><option value="6">6 минут</option><option value="7">7 минут</option><option value="8">8 минут</option><option value="9">9 минут</option><option value="10">10 минут</option>
 				<option value="11">11 минут</option><option value="12">12 минут</option><option value="13">13 минут</option><option value="14">14 минут</option><option value="15">15 минут</option><option value="16">16 минут</option><option value="17">17 минут</option><option value="18">18 минут</option><option value="19">19 минут</option><option value="20">20 минут</option>
