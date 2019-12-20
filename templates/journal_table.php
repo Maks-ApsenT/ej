@@ -121,7 +121,7 @@ label {
 							<? foreach($month as $day): ?>
 								<td>
 									<?
-									$marks_in_day = [];
+									$marks_in_day = []; $labs_in_day = [];
 									$alert = 0;
 									foreach ($student['marks'] as $mark):
 										if($mark['pair_id']==$day['id']){
@@ -129,9 +129,13 @@ label {
 											{
 												$marks_in_day[$mark['id']] = $mark['value'];
 											}
+											if($mark['value'] == 11)
+											{
+												$labs_in_day[$mark['id']] = $mark['value'];
+											}
 										}
 									endforeach;
-									if(count($marks_in_day) == 1 and ($day['type'] == '2' or $day['type'] == '1')){
+									if(count($marks_in_day) == 1 and ($day['type'] == '2' or $day['type'] == '1') and count($labs_in_day) == 0){
 										foreach ($marks_in_day as $mrk):
 											if($mrk == '12' or $mrk < 4){
 												$alert = 1;
