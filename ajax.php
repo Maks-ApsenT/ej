@@ -234,6 +234,12 @@ if ($_POST['action']=='set_mark'){
 	  			DB::$dbs->query("INSERT INTO `journal_marks` SET `pair_id` = '".$_POST["pair_id"]."', `student_id` = '".$_POST["student_id"]."', `owner_id` = '".$admin['id']."', `value` = '".$aValue_number[$mark]."', `stamp` = '".$stamp."', `prooved` = '".$prooved."', `type_id` = '".$mark_type_id."'");
 		  	}
 		  	echo DB::$dbs->lastInsertId();
+
+		  	$laba = DB::$dbs->queryFetch("SELECT * FROM `journal_pairs` WHERE `id` = '".$_POST["pair_id"]."'");
+	  			if($laba['type_id'] == 2 and $aValue_number[$mark] > 3)
+	  			{
+	  				DB::$dbs->query("INSERT INTO `journal_marks` SET `pair_id` = '".$_POST["pair_id"]."', `student_id` = '".$_POST["student_id"]."', `owner_id` = '".$admin['id']."', `value` = 11, `stamp` = '".$stamp."', `prooved` = '".$prooved."', `type_id` = 1");
+	  			}
 		} else {
 			echo "0";
 		}
