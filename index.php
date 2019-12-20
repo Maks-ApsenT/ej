@@ -1,6 +1,12 @@
 <?
-require_once('classes/core.php');
-require_once('classes/head.php');
+require_once('classes/core.php');?>
+
+<div class="bgr">
+    <span></span>
+</div>
+<div id="snowstart"></div>
+
+<?require_once('classes/head.php');
 
 if (isset($_GET['logout'])) {
 	session_destroy();

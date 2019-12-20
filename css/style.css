@@ -488,3 +488,44 @@ h3.license-type{
         width: 100%;
     }
 }
+
+/*Keyframes*/
+@keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+     100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+    }
+    
+@-moz-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-o-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-webkit-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-ms-keyframes snow {
+0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+#snowstart {
+    width:100%;
+    height:100%;
+    position:fixed;
+}
+.snow {
+    background-image: url('/ej/img/snow/snow1.png'), url('/ej/img/snow/snow3.png'), url('/ej/img/snow/snow2.png');
+    -webkit-animation: snow 20s linear infinite;
+    -moz-animation: snow 20s linear infinite;
+    -ms-animation: snow 20s linear infinite;
+    -o-animation: snow 20s linear infinite;
+    animation: snow 20s linear infinite;
+    z-index: -1;
+}
+/* END */

@@ -1,3 +1,28 @@
+var toggleSnow = function(){
+    if(localStorage.getItem("snow") == "true"){
+        $("#snowstart").removeClass("snow");
+        localStorage.setItem("snow", false); 
+    }
+    else if(localStorage.getItem("snow") == "false"){
+        $("#snowstart").addClass("snow");
+        localStorage.setItem("snow", true);
+    }
+}
+  
+$("#toggleSnowButton").ready(function() {
+    $("#toggleSnowButton").click(toggleSnow);
+});
+
+$("#snowstart").ready(function() {
+    if(localStorage.getItem("snow") === null){
+        $("#snowstart").addClass("snow");
+        localStorage.setItem("snow", true);
+    }
+    else if(localStorage.getItem("snow") == "true"){
+        $("#snowstart").addClass("snow");
+    }
+});
+
 function str_rand() {
     var result       = '';
     var words        = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';

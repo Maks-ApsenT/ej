@@ -19,13 +19,21 @@
   <script type="text/javascript" src="js/inputmask/phone.js"></script>
   <script type="text/javascript" src="js/jquery.browser.js"></script>
   <script type="text/javascript" src="js/jquery.blockUI.js"></script>
+  <script src="https://gtaprovince.ru/assets/js/jquery-ui.min.js"></script>
+        <script src="https://gtaprovince.ru/assets/js/jquery.iviewer.min.js"></script>
+        <script src="https://gtaprovince.ru/assets/js/jquery.mousewheel.min.js"></script>
   <script>
       $(function () {
           $('[data-toggle="tooltip"]').tooltip()
       })
   </script>
+  <style>
+    .bgr{width:100%;height:100%;position:fixed;top:0;left:0;background:url('img/snow/back_winter.jpg');background-size:cover;background-position:50% 50%;z-index:-1;}
+    .bgr span{width:100%;height:100%;position:absolute;top:0;left:0;background:url('img/snow/dot.png');background-size:6px;background-repeat: repeat;opacity:0.32;}
+  </style>
 </head>
 <body>
+  <div id="snowstart"></div>
 <script>
   $(function () {
       $('[data-toggle="tooltip"]').tooltip();
