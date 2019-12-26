@@ -236,7 +236,8 @@ if ($_POST['action']=='set_mark'){
 		  	echo DB::$dbs->lastInsertId();
 
 		  	$laba = DB::$dbs->queryFetch("SELECT * FROM `journal_pairs` WHERE `id` = '".$_POST["pair_id"]."'");
-	  			if($laba['type_id'] == 2 and $aValue_number[$mark] > 3)
+		  	$journal_marks = DB::$dbs->querySingle("SELECT COUNT(*) FROM `journal_marks` WHERE `pair_id` = '".$_POST["pair_id"]."' and `student_id` = '".$_POST["student_id"]."' and `value` = 11 and `type_id` = 1");
+	  			if($journal_marks == 0 and $laba['type_id'] == 2 and $aValue_number[$mark] > 3 and $aValue_number[$mark] < 11)
 	  			{
 	  				DB::$dbs->query("INSERT INTO `journal_marks` SET `pair_id` = '".$_POST["pair_id"]."', `student_id` = '".$_POST["student_id"]."', `owner_id` = '".$admin['id']."', `value` = 11, `stamp` = '".$stamp."', `prooved` = '".$prooved."', `type_id` = 1");
 	  			}

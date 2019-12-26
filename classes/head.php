@@ -19,9 +19,6 @@
   <script type="text/javascript" src="js/inputmask/phone.js"></script>
   <script type="text/javascript" src="js/jquery.browser.js"></script>
   <script type="text/javascript" src="js/jquery.blockUI.js"></script>
-  <script src="https://gtaprovince.ru/assets/js/jquery-ui.min.js"></script>
-        <script src="https://gtaprovince.ru/assets/js/jquery.iviewer.min.js"></script>
-        <script src="https://gtaprovince.ru/assets/js/jquery.mousewheel.min.js"></script>
   <script>
       $(function () {
           $('[data-toggle="tooltip"]').tooltip()
