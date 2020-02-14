@@ -86,50 +86,6 @@ if(isset($result['id']))
 if(isset($_GET['action']) and $_GET['action']=="vedomost"){
 	mode('admin');
 
-	require_once('classes/PHPExcel.php');
-	require_once('classes/PHPExcel/Writer/Excel5.php');
-
-	$xls = new PHPExcel();
-	$xls->setActiveSheetIndex(0);
-	$sheet = $xls->getActiveSheet();
-	$sheet->setTitle('Таблица умножения');
-
-// Вставляем текст в ячейку A1
-$sheet->setCellValue("A1", 'Таблица умножения');
-$sheet->getStyle('A1')->getFill()->setFillType(
-    PHPExcel_Style_Fill::FILL_SOLID);
-$sheet->getStyle('A1')->getFill()->getStartColor()->setRGB('EEEEEE');
-
-// Объединяем ячейки
-$sheet->mergeCells('A1:H1');
-
-// Выравнивание текста
-$sheet->getStyle('A1')->getAlignment()->setHorizontal(
-    PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-
-for ($i = 2; $i < 10; $i++) {
-	for ($j = 2; $j < 10; $j++) {
-        // Выводим таблицу умножения
-        $sheet->setCellValueByColumnAndRow($i - 2,$j,$i . "x" .$j . "=" . ($i*$j));
-	    // Применяем выравнивание
-	    $sheet->getStyleByColumnAndRow($i - 2, $j)->getAlignment()->
-                setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-	}
-}
-
-// Выводим HTTP-заголовки
- //header ( "Expires: Mon, 1 Apr 1974 05:00:00 GMT" );
- //header ( "Last-Modified: " . gmdate("D,d M YH:i:s") . " GMT" );
- //header ( "Cache-Control: no-cache, must-revalidate" );
- //header ( "Pragma: no-cache" );
- //header ( "Content-type: application/vnd.ms-excel" );
- //header ( "Content-Disposition: attachment; filename=matrix.xls" );
-
-// Выводим содержимое файла
- $objWriter = new PHPExcel_Writer_Excel5($xls);
- //$objWriter->save('php://output');
-
-
 	if(is_numeric($_GET["group_id"]) and isset($_GET["year"]) and isset($_GET["month"])){
 		$aGroup = $m->GetGroupById($_GET["group_id"]);
 		$group_name = $aGroup[0]["group_name"];
@@ -139,6 +95,25 @@ for ($i = 2; $i < 10; $i++) {
 		$stady_year = (int)$_GET['month'] > 7 ? ($_GET['year'].'/'.substr($_GET['year']+1,2)) : (($_GET['year']-1).'/'.substr($_GET['year'],2));
 		$aNumber_value = $aNumber_value;
 		include('templates/vedomost.php');
+	}else{
+		echo "error";
+	}
+	die();
+}
+
+
+if(isset($_GET['action']) and $_GET['action']=="lateness_vedomost"){
+	mode('admin');
+
+	if(is_numeric($_GET["group_id"]) and isset($_GET["year"]) and isset($_GET["month"])){
+		$aGroup = $m->GetGroupById($_GET["group_id"]);
+		$group_name = $aGroup[0]["group_name"];
+		$subjects = $m->lateness_GetStudentsAndSkips($aGroup[0]["group_id"],$_GET["year"],(int)$_GET["month"]);
+		$dates = $m->GetDatesForSkips($_GET["year"],(int)$_GET["month"]);
+		$month_name = $aNumber_monthName[(int)$_GET['month']];
+		$stady_year = (int)$_GET['month'] > 7 ? ($_GET['year'].'/'.substr($_GET['year']+1,2)) : (($_GET['year']-1).'/'.substr($_GET['year'],2));
+		$aNumber_value = $aNumber_value;
+		include('templates/lateness_vedomost.php');
 	}else{
 		echo "error";
 	}
@@ -188,7 +163,7 @@ if(isset($_POST['action']) and $_POST['action']=="add_date"){
 
 ##################################################################################
 
-if($_POST['action']=="edit_date"){
+if(isset($_POST['action']) and $_POST['action'] == "edit_date"){
 	mode('admin');
 	$date = \DateTime::createFromFormat('Y-n-j',$_POST["new_date"]);
 
@@ -207,7 +182,7 @@ if($_POST['action']=="edit_date"){
 
 ##################################################################################
 
-if ($_POST['action']=='set_mark'){
+if (isset($_POST['action']) and $_POST['action']=='set_mark'){
 	mode('admin');
 
 	$prooved = Check::checkEditMark($_POST["pair_id"],$_POST["student_id"],$admin['id'],$admin['role']);//вернёт prooved или FALSE
@@ -252,7 +227,7 @@ if ($_POST['action']=='set_mark'){
 
 ######################################################################################
 
-if($_POST['action']=="show_labs"){
+if(isset($_POST['action']) and $_POST['action']=="show_labs"){
 	mode('admin');
 	if(!is_numeric($_POST["subject_id"]) && !is_numeric($_POST["group_id"])) die("error");
 
@@ -267,7 +242,7 @@ if($_POST['action']=="show_labs"){
 
 ########################################################################################
 
-if($_POST['action']=="show_lateness"){
+if(isset($_POST['action']) and $_POST['action']=="show_lateness"){
 	mode('admin');
 	if(!is_numeric($_POST["subject_id"]) && !is_numeric($_POST["group_id"])) die("error");
 	$o = new parent_manager_o();
@@ -283,7 +258,7 @@ if($_POST['action']=="show_lateness"){
 
 ##########################################################################################
 
-if ($_POST['action']=='set_lateness'){
+if (isset($_POST['action']) and $_POST['action']=='set_lateness'){
 	mode('admin');
 
 	$prooved = Check::checkEditMark($_POST["pair_id"],$_POST["student_id"],$admin['id'],$admin['role']);//вернёт prooved или FALSE
@@ -316,7 +291,7 @@ if ($_POST['action']=='set_lateness'){
 
 #####################################################################################
 
-if($_POST['action']=="select_teacher"){
+if(isset($_POST['action']) and $_POST['action']=="select_teacher"){
 	if(!is_numeric($_POST["teacher_id"])) die("error");
 
 	require_once('classes/admin_class.php');
@@ -333,7 +308,7 @@ if($_POST['action']=="select_teacher"){
 
 #######################################################################################
 
-if($_POST['action']=="add_subject_for_groups"){
+if(isset($_POST['action']) and $_POST['action']=="add_subject_for_groups"){
 	if(!is_numeric($_POST["teacher_id"]) and !is_numeric($_POST["subject_id"]) and !is_array($_POST["groups_id"])) die("error");
 
 		$m->addSubjectsForGroups($_POST["teacher_id"],$_POST["subject_id"],$_POST["groups_id"]);
@@ -342,7 +317,7 @@ if($_POST['action']=="add_subject_for_groups"){
 
 #######################################################################################
 
-if($_POST['action']=="delete_per"){
+if(isset($_POST['action']) and $_POST['action']=="delete_per"){
 	if(!is_numeric($_POST["permission_id"])) die("error");
 
 		$m->deletePermissions($_POST["permission_id"]);
@@ -351,7 +326,7 @@ if($_POST['action']=="delete_per"){
 
 ########################################################################################
 
-if($_POST['action']=="teacher_load"){
+if(isset($_POST['action']) and $_POST['action']=="teacher_load"){
 	if(!is_numeric($_POST["teacher_id"])) die("error");
 
 		$teacher_id = $_POST["teacher_id"];
@@ -366,7 +341,7 @@ if($_POST['action']=="teacher_load"){
 
 #######################################################################################
 
-if($_POST['action']=="teacher_delete"){
+if(isset($_POST['action']) and $_POST['action']=="teacher_delete"){
 	if(!is_numeric($_POST["teacher_id"]) or $_POST["teacher_id"] == $admin['id']) die("error");
 
 		$teacher_id = $_POST["teacher_id"];

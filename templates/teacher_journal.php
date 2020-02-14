@@ -25,7 +25,8 @@ $avalible_groups = $m->GetGroupsByTeacher($admin['id']);
 				<option value="<?=$monthNumber?>" <?if(date("m") == $monthNumber){?>selected="selected"<?}?>><?=$monthName?></option>
 			<? endforeach;?>
 		</select>
-		<span style="color: blue;border-bottom: 1px blue dashed;cursor: pointer" id="vedomost">Ведомость пропусков</span>
+		<span style="color: blue;border-bottom: 1px blue dashed;cursor: pointer" id="vedomost">Ведомость пропусков</span> | 
+		<span style="color: blue;border-bottom: 1px blue dashed;cursor: pointer" id="lateness_vedomost">Ведомость опозданий</span>
 	</div>
 	<div class="options"></div>
 </div>

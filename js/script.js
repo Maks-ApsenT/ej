@@ -157,6 +157,17 @@ $(document).ready(function(){
         }
     });
 
+    $('#lateness_vedomost').click(function(){
+        var btn = $('.activeG');
+
+        if (btn.length > 0 && btn.attr('groupid')) {
+            var win = window.open('ajax.php?action=lateness_vedomost&group_id=' + btn.attr('groupid') + '&year=' + $('#vedomost_year').val() + '&month=' + $('#vedomost_month').val(),  '_blank');
+            win.focus();
+        } else {
+            alert("Выберете группу");
+        }
+    });
+
 });
 
 function get(str)

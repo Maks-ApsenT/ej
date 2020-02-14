@@ -11,7 +11,7 @@ Header("Pragma: no-cache");
 
 define('DBHOST', 'openserver');
 define('DBUSER', 'root'); // юзер бд
-define('DBPASS', '3906246'); // пароль бд
+define('DBPASS', ''); // пароль бд
 define('DBNAME', 'elj'); // имя бд
 define('DBPORT', '3306'); // не менять
 require_once('inc/class_pdo.php');

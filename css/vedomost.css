@@ -86,7 +86,7 @@ td.b2b{/*Двояная граница*/
     margin: 0 2px 0 2px;
 }
 .pupilNumber, .charNumber, .mark td div, .labs td div, #dateOfMonth td div{/*ширина колонки номер ученика, число и оценка одинаквы*/
-    width: 22px;
+    width: 26px;
     text-align: center;
     font-size: 15px;
     margin: 0;

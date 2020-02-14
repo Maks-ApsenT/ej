@@ -190,6 +190,23 @@ public function deletePermissions($permission_id) {
 }
 
 
+//////////////////////////////
+
+
+public function lateness_GetStudentsAndSkips($group_id, $year, $month){//получаем учащихся и их пропуски
+    $students = DB::$dbs->query("SELECT st.id, concat(st.f,' ',left(st.i,1),'. ',left(st.o,1),'.') short_name, concat_ws(' ',st.f,st.i,st.o) long_name FROM students st LEFT JOIN groups g ON g.id = st.group_id WHERE g.id={$group_id} AND st.state='обучается' ORDER BY st.f, st.i")->fetchAll();
+
+    foreach ($students as $key => $student) {
+        $students[$key]['marks'] = DB::$dbs->query("SELECT DATE_FORMAT(p.on_date,'%Y-%m-%d') as on_date, sum(value) as skip_hour FROM journal_lateness_marks m INNER JOIN journal_pairs p ON m.pair_id = p.id where m.student_id='{$student['id']}' and p.on_date >= '".date('Y-m-d',mktime(0,0,0,$month,1,$year))."' and p.on_date < '".date('Y-m-d',mktime(0,0,0,$month+1,1,$year))."' GROUP BY DATE_FORMAT(p.on_date,'%Y-%m-%d')")->fetchAll();
+        //print_r($db);
+        //$skip[$db[$key]['on_date']] .= $db[$key]['skip_hour']
+        //$students[$key]['marks'] = ["on_date" => $db[$key]['on_date'], "skip_hour" => $db[$key]['skip_hour']];
+    }
+
+    return $students;
+
+}
+
 
 }
 

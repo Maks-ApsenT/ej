@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="js/script.js"></script>
 	</head>
 	<body>
-		<div class="up">Ведомость учета учебных часов, пропущенных учащимися за <span><?=$month_name?> </span> <?=$stady_year?> учебный год, группа <span><?=$group_name?></span></div>
+		<div class="up">Ведомость учета опозданий учащихся за <span><?=$month_name?> </span> <?=$stady_year?> учебный год, группа <span><?=$group_name?></span></div>
 		<div class="middle">
 			<div class="leftColumn">
 				<table class="leftTable heightRow27" cellspacing="0" cellpading="0" border="0">
@@ -39,48 +39,29 @@
 							</td>
 						<? endforeach; ?>
 						<td>
-							<div class="text-center">по уваж.</div>
-						</td>
-						<td>
-							<div class="text-center">б/л (дни)</div>
-						</td>
-						<td>
-							<div class="text-center">без уваж.</div>
+							<div class="text-center">кол-во</div>
 						</td>
 					</tr>
-					<? foreach ($subjects as $subject): ?>
+					<? $order = 0; foreach ($subjects as $subject): $count = 0;?>
 					<tr class="mark">
 						<? foreach ($dates as $date): ?>
 							<td>
 								<div data-date="<?=$date?>">
 								<? foreach ($subject['marks'] as $mark): ?>
+									<? $count += ($mark['on_date'] == $date ? (isset($mark['skip_hour']) ? $mark['skip_hour'] : 0) : 0); ?>
 									<?=($mark['on_date'] == $date ? (isset($mark['skip_hour']) ? $mark['skip_hour'] : null) : null)?>
 								<? endforeach; ?>
 								</div>
 							</td>
 						<? endforeach; ?>
 						<td>
-							<div></div>
-						</td>
-						<td>
-							<div></div>
-						</td>
-						<td>
-							<div></div>
+							<div><?=$count?><? $order += $count?></div>
 						</td>
 					</tr>
 					<? endforeach; ?>
 					<tr>
-						<td colspan="<?=count($dates)?>" style="text-align: right">ИТОГО</td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
 						<td colspan="<?=count($dates)?>" style="text-align: right">ВСЕГО</td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td><div class="text-center"><?=$order?></div></td>
 					</tr>
 				</table>
 				<div style="padding-top: 15px">Подпись куратора _______________________ _______________________</div>
