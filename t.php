@@ -5,7 +5,7 @@ $title = "Вход для преподавателей";?>
 <div class="bgr">
     <span></span>
 </div>
-<div id="snowstart"></div>
+<div id="snowstart1"></div>
 
 <?require_once('classes/head.php');
 ?>
